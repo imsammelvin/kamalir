@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<style>
+  .container{
+    max-width: 800px;
+		margin: auto;
+		text-align:center;
+    background-color:crimson;
+  }
+  .buttons{
+		color: white;
+		background-color: rgb(247, 203, 8);
+	  padding: 5px 3px;
+		border: 1px solid red;
+		border-radius: 5px;
+    font-size: 15px;
+	}
+
+</style>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" id="email" required><br><br>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" id="psw" required><br><br>
+
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me</label><br>
+    
+    <div>
+      <button type="button" class="buttons"  onclick="document.location='homepage.html'">Cancel</button>
+      <button type="submit" class="buttons" onclick=signUp()>Login</button>
+    </div>
+  </div>
+  <script>
+      var check=0;
+    users=[{username:"hema",password: "hemachandrika"},{username:"gokkul",password: "hemachandrika"}, {username:"mary",password: "hemachandrika"}]
+    function signUp(){
+        for(var i =0;i<users.length;i++){
+         if (users[i].username==document.getElementById("email").value && users[i].password==document.getElementById("psw").value )
+         {
+             check+=1
+         }
+        }
+        if(check==1){
+            alert("Loged in successfully");
+            check=0
+        }
+        else{
+            alert("no accounts exist");
+        }
+    }
+    
+  </script>
+
+</body>
+</html>
